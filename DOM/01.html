@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM - 1</title>
+    <style>
+        .bg-black{
+            background-color: #212121;
+            color: #fff;
+        }
+    </style>
+</head>
+<body class="bg-black">
+    <div class="bg-black">
+        <h1 id="title" class="heading">DOM Learning</h1>
+        <p>Lorem ipsum, dolor sit amet</p>
+    </div>
+    <script src="01_notes.js">
+    </script>
+</body>
+</html> 
+
+<!-- 
+    Document Object Model of above html code :-
+
+            HTML
+             |
+             |
+          Document 
+             |
+             |
+            / \
+           /   \
+          /     \
+       Head      \  
+        |         \
+        |          \
+       / \          \
+      /   \          \ 
+  title   Meta        \ 
+    |        |         \
+    |        |          \
+Text Node  Attribute     \ 
+                          \
+                           \
+                            \
+                           Body
+                             |
+                             |
+                            Div ===> Attribute
+                             |
+                             |
+                            / \
+                           /   \
+                          /     \
+                         /       \
+         attribute <=== h1        p
+                         |        |
+                         |        |
+                     Text Node  Text Node
+
+
+
+ --> 

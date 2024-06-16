@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM - 4</title>
+</head>
+<body style="background-color: black; color: white;">
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+    //Create a element
+    function addLanguage(langName){
+        const li = document.createElement('li')
+        li.innerText = `${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addLanguage('Python')
+
+    //Create Element in a Optimized Way
+    function optiAddLanguage(langName){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(`${langName}`))
+        document.querySelector('.language').appendChild(li)
+    }
+    optiAddLanguage('TypeScript')
+
+    //Edit a Element
+    const secondLang = document.querySelector('li:nth-child(2)');
+    //console.log(secondLang)
+    const newLi = document.createElement('li')
+    newLi.textContent = "MOJO"
+    secondLang.replaceWith(newLi)
+
+    //Edit a Element
+    const firstLang = document.querySelector('li:first-child')
+    firstLang.outerHTML = '<li>TypeScript</li>'
+
+    //Remove a Element / Delete a Element
+    const lastLang = document.querySelector('li:nth-child(3)');
+    //console.log(lastLang)
+    lastLang.remove()
+    
+</script>
+</html>

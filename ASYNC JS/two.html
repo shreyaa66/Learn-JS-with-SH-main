@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black; color: rgb(233, 233, 233);">
+    <h1>Dicussion with JavaScript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // setInterval(function(){
+    //     console.log("Abhijeet | ","Time :- ",new Date().toLocaleTimeString())
+    // },2000)
+    let intervalID; // Define intervalID outside the functions to make it accessible globally
+    const startPrint = function(){
+        const newElement = document.createElement('p');
+        newElement.innerHTML = ("Abhijeet | "+"Time :- "+new Date().toLocaleTimeString());
+        document.body.appendChild(newElement);
+    }
+
+    const stopPrint = function() {
+        clearInterval(intervalID);
+    };
+
+    document.querySelector('#start').addEventListener('click', function() {
+        intervalID = setInterval(startPrint, 2000);
+    });
+
+    document.querySelector('#stop').addEventListener('click', stopPrint);
+
+</script>
+</html>
